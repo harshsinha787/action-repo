@@ -5,7 +5,7 @@ This is the action repo. Please see [`.github/workflows/webhook.yml`](.github/wo
 Please edit the ngrok URL in:
 
 ```
-GitHub → Settings → Secrets and variables → Actions
+GitHub → Settings → Secrets and variables → Actions → WEBHOOK_URL
 ```
 
 Update the secret there to reflect your current ngrok tunnel URL.
