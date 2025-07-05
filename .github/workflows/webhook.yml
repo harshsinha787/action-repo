@@ -1,0 +1,24 @@
+name: Send Webhook to Local Server
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  send-webhook:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send webhook to Flask app
+        run: |
+          curl -X POST ${{ secrets.WEBHOOK_URL }} \
+          -H "Content-Type: application/json" \
+          -H "X-GitHub-Event: ${{ github.event_name }}" \
+          -d '{
+            "head_commit": {
+              "id": "${{ github.sha }}"
+            },
+            "pusher": {
+              "name": "${{ github.actor }}"
+            },
+            "ref": "${{ github.ref }}"
+          }'
