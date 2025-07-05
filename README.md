@@ -1,2 +1,2 @@
 # action-repo
-finaltest1
+finaltest2
