@@ -22,7 +22,7 @@ jobs:
         run: |
           curl -X POST ${{ secrets.WEBHOOK_URL }} \
           -H "Content-Type: application/json" \
-          -H "X-GitHub-Event: ${{ github.event_name }}" \
+          -H "GitHubEvent: ${{ github.event_name }}" \
           -d '{
             "head_commit": {
               "id": "${{ github.sha }}"
