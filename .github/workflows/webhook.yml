@@ -14,7 +14,7 @@ jobs:
     steps:
       # The Task is to send details to the Flask app using a curl HTTP POST request.
       # The local address of the Flask app is exposed as a public address using ngrok. 
-      # The exposed URL is stored as a GitHub-Secret.
+      # The exposed URL is stored as a GitHub-Secret. Please add it as per your ngrok provided URL
       # Header has Action type, and Body type set to JSON
       # Body in JSON format has a hash for Commit ID, Name of User, and Branch information.
       
