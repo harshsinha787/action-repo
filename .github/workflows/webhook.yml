@@ -1,13 +1,23 @@
+# Name of this Configuration
 name: Send Webhook to Local Server
-
+# Trigger GitHub action on the following events
 on:
   push:
   pull_request:
-
+# Create a Job
 jobs:
+  # Action 
   send-webhook:
+    # Run this Job on a Ubuntu virtual machine
     runs-on: ubuntu-latest
+    # Steps to do this Job
     steps:
+      # The Task is to send details to the Flask app using a curl HTTP POST request.
+      # The local address of the Flask app is exposed as a public address using ngrok. 
+      # The exposed URL is stored as a GitHub-Secret.
+      # Header has Action type, and Body type set to JSON
+      # Body in JSON format has a hash for Commit ID, Name of User, and Branch information.
+      
       - name: Send webhook to Flask app
         run: |
           curl -X POST ${{ secrets.WEBHOOK_URL }} \
