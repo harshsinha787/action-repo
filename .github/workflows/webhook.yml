@@ -20,7 +20,7 @@ jobs:
       
       - name: Send webhook to Flask app
         run: |
-          curl -X POST ${{ secrets.WEBHOOK_URL2/webhook/receiver}} \
+          curl -X POST ${{ secrets.WEBHOOK_URL2}}/webhook/receiver \
           -H "Content-Type: application/json" \
           -H "GitHubEvent: ${{ github.event_name }}" \
           -d '{
